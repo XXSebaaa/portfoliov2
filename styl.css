@@ -1,0 +1,311 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  background-color: lightgray;
+  color: #023047;
+}
+
+header.naglowek {
+  position: sticky;
+  top: 0;
+  background-color: #8ecae6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav.menu {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+nav.menu a {
+  color: #023047;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+nav.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sekcja h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  border-left: 5px solid #023047;
+  padding-left: 10px;
+}
+
+.siatka {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.karta {
+  background-color: white;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 250px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.karta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.podglad {
+  height: 150px;
+}
+
+.p-web {
+  background-color: #219ebc;
+}
+
+.p-cpp {
+  background-color: #023047;
+}
+
+.p-python {
+  background-color: #ffb703;
+}
+
+.p-inne {
+  background-color: #8ecae6;
+}
+
+.tresc {
+  padding: 20px;
+}
+
+.tresc h3 {
+  margin-bottom: 8px;
+}
+
+.tresc p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 8px 0 15px 0;
+}
+
+.przycisk {
+  display: inline-block;
+  background-color: #fb8500;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 3px 3px 3px 0;
+  transition: background-color 0.2s;
+}
+
+.przycisk:hover {
+  background-color: #e67600;
+}
+
+details {
+  margin-top: 5px;
+}
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.projekty-3d {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+  animation: pojawienieProjektow 0.3s ease;
+}
+
+.projekty-3d .przycisk {
+  animation: wejscieProjektu 0.3s ease;
+}
+
+@keyframes pojawienieProjektow {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wejscieProjektu {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.okno {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 200;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.okno-zawartosc {
+  background-color: white;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  animation: pojawienieOkna 0.25s ease;
+}
+
+.okno-zawartosc h2 {
+  margin-bottom: 25px;
+}
+
+.lista-zdjec {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.lista-zdjec button {
+  border: none;
+  background-color: #219ebc;
+  color: white;
+  padding: 20px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.lista-zdjec button:hover {
+  background-color: #023047;
+  transform: translateY(-2px);
+}
+
+.powrot {
+  margin-top: 5px;
+}
+
+.zdjecie-zawartosc {
+  max-width: 1000px;
+}
+
+.przegladarka-zdjec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.zdjecie-zawartosc img {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.strzalka {
+  flex-shrink: 0;
+  width: 45px;
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  background-color: #219ebc;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.strzalka:hover {
+  background-color: #023047;
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  background-color: #e5e5e5;
+}
+
+@keyframes pojawienieOkna {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
